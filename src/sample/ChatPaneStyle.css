@@ -1,0 +1,55 @@
+#button_top {
+    -fx-background-color: White;
+    -fx-border-width: 0 0 0 0;
+}
+
+#button_top:hover {
+    -fx-background-color: #ebebeb;
+    -fx-border-width: 0 0 0 0;
+}
+
+#button_center {
+    -fx-background-color: White;
+    -fx-border-width: 0 0 0 0;
+}
+
+#button_center:hover {
+    -fx-background-color: #ebebeb;
+    -fx-border-width: 0 0 0 0;
+}
+
+#button_close {
+    -fx-background-color: White;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 80px;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color: #cdcfd0;
+    -fx-border-radius: 1px;
+}
+
+#button_close:hover {
+    -fx-background-color: #efeff0;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 80px;
+    -fx-border-width: 2px 2px 2px 2px;
+}
+
+#button_send {
+    -fx-background-color: #373737;
+    -fx-text-fill: White;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 80px;
+    -fx-border-width: 0 0 0 0;
+}
+
+#button_send:hover {
+    -fx-background-color: #979798;
+    -fx-text-fill: White;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 80px;
+    -fx-border-width: 0 0 0 0;
+}
+
+#textarea {
+    -fx-font-size: 16px;
+}

@@ -1,0 +1,110 @@
+/*.tab {*/
+/*    !*-fx-pref-width: 130;*!*/
+/*    !*-fx-pref-height: 40;*!*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-font-family: "Microsoft YaHei UI";*/
+/*    !*-fx-background-color: White;*!*/
+/*    -fx-alignment: center;*/
+/*    -fx-border-width: 0 0px 0px 0;*/
+/*}*/
+
+/*.tab:selected {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-border-width: 0 0px 1px 0;*/
+/*}*/
+
+/*.tab-pane {*/
+/*    -fx-tab-min-width: 120;*/
+/*    -fx-tab-min-height: 40;*/
+/*    -fx-background-color: White;*/
+/*}*/
+
+/*.tab-pane>*.tab-header-area>*.tab-header-background*/
+/*{*/
+/*    -fx-background-color: -fx-outer-border, -fx-text-box-border, White;*/
+/*}*/
+
+/*.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {*/
+/*    -fx-border-radius: 0px;*/
+/*    -fx-border-width: 0px 0px 2px 0px;*/
+/*    -fx-border-color: #4e4e4f;*/
+/*}*/
+
+.rootPane {
+    -fx-background-color: White;
+}
+
+#tab_button {
+    -fx-pref-width: 145;
+    -fx-pref-height: 40;
+    -fx-font-size: 16px;
+    -fx-text-fill: #828282;
+    -fx-background-color: White;
+    -fx-border-color: #4e4e4f;
+    -fx-border-radius: 0px;
+    -fx-border-width: 0 0px 0px 0;
+    -fx-alignment: center;
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+#tab_button:hover {
+    -fx-text-fill: #4e4e4f;
+}
+
+#tab_button:pressed {
+    -fx-text-fill: #4e4e4f;
+    -fx-font-weight: bolder;
+    -fx-border-width: 0 0px 1px 0;
+}
+
+#tab_button:selected {
+    -fx-font-weight: bold ;
+    -fx-text-fill: #4e4e4f;
+    -fx-border-width: 0 0px 1px 0;
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+.accordion {
+    -fx-pref-height: 100px;
+    -fx-font-size: 15px;
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+#button_messageList {
+    -fx-background-color: White;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 15px;
+}
+
+#button_messageList:hover {
+    -fx-background-color: #f2f2f2;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+}
+
+#button_messageList:pressed {
+    -fx-background-color: #ebebeb;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+}
+
+#button_buttom {
+    -fx-background-color: White;
+    -fx-pref-height: 20px;
+    -fx-pref-width: 20px;
+}
+
+#button_buttom:hover {
+    -fx-background-color: #f2f2f2;
+    -fx-pref-height: 20px;
+    -fx-pref-width: 20px;
+}
+
+#button_buttom:pressed {
+    -fx-background-color: #ebebeb;
+    -fx-pref-height: 20px;
+    -fx-pref-width: 20px;
+}

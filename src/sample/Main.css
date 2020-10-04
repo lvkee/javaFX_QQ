@@ -1,0 +1,14 @@
+#button_web {
+    -fx-background-color: White;
+    -fx-text-fill: #b5b5b5;
+}
+
+#button_web:hover {
+    -fx-background-color: White;
+    -fx-text-fill: #838383;
+}
+
+/*
+.check-box {
+    -fx-text-fill: #b5b5b5;
+}*/
