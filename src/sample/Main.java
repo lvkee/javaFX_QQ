@@ -14,7 +14,6 @@ import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -64,26 +63,8 @@ public class Main extends Application {
             }
             primaryStage.hide();
         });
-        button1.setOnAction(event -> {
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.browse(new URI("https://aq.qq.com/v2/uv_aq/html/reset_pwd/pc_reset_pwd_input_account.html?v=3.0&old_ver_account=1986985788"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-        });
-        button2.setOnAction(event -> {
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.browse(new URI("https://ssl.zc.qq.com/v3/index-chs.html?type=0"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-        });
+        this.openWebsite(button1, "https://aq.qq.com/v2/uv_aq/html/reset_pwd/pc_reset_pwd_input_account.html?v=3.0&old_ver_account=1986985788");
+        this.openWebsite(button2, "https://ssl.zc.qq.com/v3/index-chs.html?type=0");
         rootPane.add(bt1, 1, 4, 4, 1);
         rootPane.add(imgView_login, 0, 0, 4, 1);
         rootPane.add(button2, 0, 5);
@@ -115,6 +96,18 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public void openWebsite(Button button, String website) {
+        button.setOnAction(event -> {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(new URI(website));
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
     public static void main(String[] args) {
         launch(args);
