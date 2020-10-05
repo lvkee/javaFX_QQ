@@ -13,11 +13,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-
 public class FriendList extends Application {
 
     final String[] friendListName = new String[]{"好友", "家人", "老师", "陌生人", "黑名单"};
@@ -99,16 +94,8 @@ public class FriendList extends Application {
             buttons1[i].setId("button_buttom");
         }
 //        设置腾讯文档按钮动作
-        buttons1[3].setOnAction(event -> {
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.browse(new URI("https://docs.qq.com/desktop/"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-        });
+        Main main = new Main();
+        main.openWebsite(buttons1[3], "https://docs.qq.com/desktop/");
         hBox_buttom.getChildren().addAll(buttons1[1], buttons1[2], buttons1[3], buttons1[4], buttons1[5]);
         rootPane.add(hBox_buttom, 0, 3, 6, 1);
         rootPane.add(imageView_bg, 0, 0, 6, 1);
