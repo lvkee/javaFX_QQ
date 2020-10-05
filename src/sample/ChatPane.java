@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,11 +11,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 public class ChatPane extends Application {
     Image image_call = new Image("file:src/resource/call.png", 26, 26, true, true);
@@ -78,15 +74,11 @@ public class ChatPane extends Application {
         button_send.setId("button_send");
         button_close.setId("button_close");
         //        设置腾讯文档按钮动作
-        buttons[4].setOnAction(event -> {
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.browse(new URI("https://docs.qq.com/desktop/"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
+        Main main = new Main();
+        main.openWebsite(buttons[4], "https://docs.qq.com/desktop/");
+//        设置退出事件
+        button_close.setOnAction(event -> {
+            Platform.exit();
         });
         hBox_center_button.getChildren().addAll(buttons[1], buttons[2], buttons[3], buttons[4], buttons[5], buttons[6], buttons[7], buttons[8]);
         rootPane.add(hBox_center_button, 0, 2, 8, 1);
