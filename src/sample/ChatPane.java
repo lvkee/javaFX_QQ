@@ -26,7 +26,7 @@ public class ChatPane extends Application {
     Image image_history = new Image("file:src/resource/history.png");
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         GridPane rootPane = new GridPane();
 //        rootPane.setGridLinesVisible(true);
 //        设置顶部工具栏
@@ -46,17 +46,17 @@ public class ChatPane extends Application {
         textArea_dialog.setId("textarea");
 //      设置中部工具栏
         ImageView imageView_face = new ImageView(image_face), imageView_cut = new ImageView(image_cut), imageView_file = new ImageView(image_file), imageView_doc = new ImageView(image_doc), imageView_image = new ImageView(image_image), imageView_shake = new ImageView(image_shake), imageView_full = new ImageView(image_full), imageView_history = new ImageView(image_history);
-        ImageView[] imageViews = new ImageView[9];
-        imageViews[1] = imageView_face;
-        imageViews[2] = imageView_cut;
-        imageViews[3] = imageView_file;
-        imageViews[4] = imageView_doc;
-        imageViews[5] = imageView_image;
-        imageViews[6] = imageView_shake;
-        imageViews[7] = imageView_full;
-        imageViews[8] = imageView_history;
-        Button[] buttons = new Button[9];
-        for (int i = 1; i <= 8; i++) {
+        ImageView[] imageViews = new ImageView[8];
+        imageViews[0] = imageView_face;
+        imageViews[1] = imageView_cut;
+        imageViews[2] = imageView_file;
+        imageViews[3] = imageView_doc;
+        imageViews[4] = imageView_image;
+        imageViews[5] = imageView_shake;
+        imageViews[6] = imageView_full;
+        imageViews[7] = imageView_history;
+        Button[] buttons = new Button[8];
+        for (int i = 0; i < imageViews.length; i++) {
             buttons[i] = new Button("", imageViews[i]);
             buttons[i].setId("button_center");
         }
@@ -75,12 +75,12 @@ public class ChatPane extends Application {
         button_close.setId("button_close");
         //        设置腾讯文档按钮动作
         Main main = new Main();
-        main.openWebsite(buttons[4], "https://docs.qq.com/desktop/");
+        main.openWebsite(buttons[3], "https://docs.qq.com/desktop/");
 //        设置退出事件
-        button_close.setOnAction(event -> {
-            Platform.exit();
-        });
-        hBox_center_button.getChildren().addAll(buttons[1], buttons[2], buttons[3], buttons[4], buttons[5], buttons[6], buttons[7], buttons[8]);
+        button_close.setOnAction(event -> Platform.exit());
+        for (Button button : buttons) {
+            hBox_center_button.getChildren().add(button);
+        }
         rootPane.add(hBox_center_button, 0, 2, 8, 1);
         hBox_top_toolbar.getChildren().addAll(button_call, button_video, button_shenglue);
         rootPane.add(button_close, 6, 4);
@@ -88,12 +88,12 @@ public class ChatPane extends Application {
         rootPane.add(textArea_buttom, 0, 3, 8, 1);
         rootPane.add(textArea_dialog, 0, 1, 8, 1);
         rootPane.add(hBox_top_toolbar, 0, 0, 8, 1);
-        rootPane.setMargin(textArea_dialog, new Insets(4, 0, 0, 0));
-        hBox_top_toolbar.setMargin(button_call, new Insets(0, 0, 0, 20));
-        rootPane.setMargin(button_close, new Insets(5, 0, 0, 280));
-        rootPane.setMargin(button_send, new Insets(5, 0, 0, 10));
-        rootPane.setMargin(hBox_top_toolbar, new Insets(0, 0, 0, 320));
-        hBox_center_button.setMargin(buttons[7], new Insets(0, 0, 0, 125));
+        GridPane.setMargin(textArea_dialog, new Insets(4, 0, 0, 0));
+        HBox.setMargin(button_call, new Insets(0, 0, 0, 20));
+        GridPane.setMargin(button_close, new Insets(5, 0, 0, 280));
+        GridPane.setMargin(button_send, new Insets(5, 0, 0, 10));
+        GridPane.setMargin(hBox_top_toolbar, new Insets(0, 0, 0, 320));
+        HBox.setMargin(buttons[7], new Insets(0, 0, 0, 125));
         Scene scene = new Scene(rootPane, 460, 460);
         primaryStage.setTitle("聊天界面");
         primaryStage.getIcons().add(new Image("file:src/resource/qq.png"));
