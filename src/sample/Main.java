@@ -28,7 +28,7 @@ public class Main extends Application {
     final TextField tf = new TextField();
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
         GridPane rootPane = new GridPane();
         rootPane.setPadding(new Insets(0, 0, 0, 0));
         rootPane.setVgap(5);
@@ -75,15 +75,15 @@ public class Main extends Application {
         rootPane.add(cb1, 1, 3);
         rootPane.add(cb2, 2, 3);
         rootPane.add(button1, 3, 3);
-        rootPane.setMargin(bt1, new Insets(0, 0, 0, 40));
-        rootPane.setMargin(lab1, new Insets(0, 0, 0, 40));
-        rootPane.setMargin(tf, new Insets(0, 0, 0, 0));
-        rootPane.setMargin(lab2, new Insets(0, 0, 0, 40));
-        rootPane.setMargin(pf, new Insets(0, 0, 0, 0));
-        rootPane.setMargin(cb1, new Insets(0, 0, 0, 40));
-        rootPane.setMargin(cb2, new Insets(0, 0, 0, 10));
-        rootPane.setMargin(button1, new Insets(0, 0, 0, 30));
-        rootPane.setMargin(button2, new Insets(0, 0, 5, 0));
+        GridPane.setMargin(bt1, new Insets(0, 0, 0, 40));
+        GridPane.setMargin(lab1, new Insets(0, 0, 0, 40));
+        GridPane.setMargin(tf, new Insets(0, 0, 0, 0));
+        GridPane.setMargin(lab2, new Insets(0, 0, 0, 40));
+        GridPane.setMargin(pf, new Insets(0, 0, 0, 0));
+        GridPane.setMargin(cb1, new Insets(0, 0, 0, 40));
+        GridPane.setMargin(cb2, new Insets(0, 0, 0, 10));
+        GridPane.setMargin(button1, new Insets(0, 0, 0, 30));
+        GridPane.setMargin(button2, new Insets(0, 0, 5, 0));
         Scene scene = new Scene(rootPane, 425, 300);
         rootPane.setStyle("-fx-background-color:White;");
         primaryStage.setTitle("腾讯QQ  Author: Chris 1986985788");
@@ -101,9 +101,7 @@ public class Main extends Application {
             Desktop desktop = Desktop.getDesktop();
             try {
                 desktop.browse(new URI(website));
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
+            } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
         });
