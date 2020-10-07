@@ -20,7 +20,7 @@ public class FriendList extends Application {
     final Label label = new Label("TEST");
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         GridPane rootPane = new GridPane();
 //        rootPane.setGridLinesVisible(true);
 //        设置背景图
@@ -82,28 +82,30 @@ public class FriendList extends Application {
         Image image_weiyun = new Image("file:src/resource/weiyun.png");
         Image image_ying = new Image("file:src/resource/ying.png");
         ImageView iv1 = new ImageView(image_manu), iv2 = new ImageView(image_friend), iv3 = new ImageView(image_doc), iv4 = new ImageView(image_weiyun), iv5 = new ImageView(image_ying);
-        ImageView[] imageViews = new ImageView[6];
-        imageViews[1] = iv1;
-        imageViews[2] = iv2;
-        imageViews[3] = iv3;
-        imageViews[4] = iv4;
-        imageViews[5] = iv5;
-        Button[] buttons1 = new Button[6];
-        for (int i = 1; i <= 5; i++) {
+        ImageView[] imageViews = new ImageView[5];
+        imageViews[0] = iv1;
+        imageViews[1] = iv2;
+        imageViews[2] = iv3;
+        imageViews[3] = iv4;
+        imageViews[4] = iv5;
+        Button[] buttons1 = new Button[5];
+        for (int i = 0; i < imageViews.length; i++) {
             buttons1[i] = new Button("", imageViews[i]);
             buttons1[i].setId("button_buttom");
         }
 //        设置腾讯文档按钮动作
         Main main = new Main();
-        main.openWebsite(buttons1[3], "https://docs.qq.com/desktop/");
-        hBox_buttom.getChildren().addAll(buttons1[1], buttons1[2], buttons1[3], buttons1[4], buttons1[5]);
+        main.openWebsite(buttons1[2], "https://docs.qq.com/desktop/");
+        for (Button button : buttons1) {
+            hBox_buttom.getChildren().add(button);
+        }
         rootPane.add(hBox_buttom, 0, 3, 6, 1);
         rootPane.add(imageView_bg, 0, 0, 6, 1);
         rootPane.add(button_contact, 0, 1, 3, 1);
         rootPane.add(button_message, 3, 1, 3, 1);
         rootPane.add(accordion, 0, 2, 6, 1);
-        rootPane.setMargin(hBox_buttom, new Insets(230, 0, 0, 0));
-        hBox_buttom.setMargin(buttons1[4], new Insets(0, 0, 0, 70));
+        GridPane.setMargin(hBox_buttom, new Insets(230, 0, 0, 0));
+        HBox.setMargin(buttons1[4], new Insets(0, 0, 0, 70));
         Scene scene = new Scene(rootPane, 275, 554);
         primaryStage.setTitle("好友列表");
         primaryStage.getIcons().add(new Image("file:src/resource/qq.png"));
